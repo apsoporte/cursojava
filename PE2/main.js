@@ -11,23 +11,23 @@ class Productos
 //Creo mi array vacio y voy agregando los productos a medida que voy comprando
 const lista=[];
 
-let nombre = prompt("Producto a comprar?");
+let nombre = String(prompt("Producto a comprar?"));
 let precio = parseInt(prompt("Ingrese su precio"));
 let dato = "";
 
 //Controla que ningun datos ingresados sean vacio, caso contrario imprime el ticket
-while(nombre != "" || isNaN(precio) != true)
-    {   
-        if(nombre === "" && isNaN(precio) != true) // Para conocer que dato ingresa vacio
+while(nombre != "" && isNaN(nombre) != false || isNaN(precio) != true)
+    {           
+        if(nombre === "" || isNaN(nombre) === false && isNaN(precio) != true) // Para conocer que dato ingresa vacio
             {
-                dato = "nombre";
+                dato = "nombre";                
             }
         else
             {
-                dato = "precio";
+                dato = "precio";                
             }
 
-        if (nombre != "" && isNaN(precio) != true) //Si ingresa bien los datos, hace la carga en el Array
+        if (nombre != "" && isNaN(nombre) != false && isNaN(precio) != true) //Si ingresa bien los datos, hace la carga en el Array
             {
                 const item = new Productos(nombre, precio);    
                 lista.push(item);                        
