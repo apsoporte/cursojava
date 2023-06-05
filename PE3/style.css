@@ -1,0 +1,31 @@
+/*Alta en Gral*/ 
+h1
+  {
+    text-align: center;    
+    font-size: 25px;
+  }
+h1:hover
+  {
+    font-size: 35px;
+    color: blue;
+  }
+body
+  {
+    background-color: bisque;
+  }
+
+footer
+  {
+    text-align: center;
+    font-family: cursive;
+    font-size: 15px;    
+    transform: translateY(280px);
+  }  
+
+#grid-Container
+  {
+    display: grid;    
+    grid-template-areas: "id producto  precio";
+    grid-template-columns: 50px 350px 150px;    
+  }
+
