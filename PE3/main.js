@@ -45,8 +45,15 @@ function agregarProducto()
         for(const nombre of Productos)
             {
                 if (nombre.nombreProducto === nombreProducto)
-                    {   
-                        alert("EL producto ingresado, ya existe");                        
+                    {                       
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'El producto ingresado, ya existe!',
+                            //text: 'El producto ingresado, ya existe!'
+                            showConfirmButton: false,
+                            timer: 1300                    
+                          })
+
                         formulario.reset();
                         document.getElementById('producto').focus();
                         localStorage.removeItem();
@@ -64,13 +71,32 @@ function agregarProducto()
                 Productos.idProducto = Productos.idProducto + 1;//Incremento el ID de mi ARREGLO                
                 
                 localStorage.setItem('productos', JSON.stringify(Productos));//Agrego al LocalStorage y lo convierto en Json                
+
+                formulario.reset();
+                document.getElementById('producto').focus();
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Producto Ingresado',
+                    showConfirmButton: false,
+                    timer: 1000
+                  })                
             }
         else
             {
-                alert("Ingrese por favor bien los datos");
+                //alert("Ingrese por favor bien los datos");    
                 formulario.reset();
                 document.getElementById('producto').focus();
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese por favor bien los datos!',
+                    showConfirmButton: false,
+                    timer: 1300                    
+                  })            
             }        
+
         formulario.reset();//Reseteo el formulario y lo dejo en blanco
         document.getElementById('producto').focus();//Me posiciono nuevamente en el campo producto
     }
