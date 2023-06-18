@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport"content="width=device-width, initial-scale=1.0"/>
+		<title>Tienda de Bebidas</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<h1>DRINK´S & REFRESH</h1>
+		<header>						
+			<!--Contenedor para la imagen del carrito-->
+			<div class="iconoContenedor">
+				<!--Se crea este DIV para que se oculte el listado al presionar el ICONO del carrito-->
+				<div class="container-cart-icon">
+					<!--Me trae el ICONO del CARRITO-->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="iconoCarrito"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<!--Contador del CARRITO-->
+					<div class="contadorProducto">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="productoContenedor carrito">
+					<!--Se crea este DIV para que al añadir dinamicamente con JS lo haga bien-->
+					<div class="eliminarItem carritoVacio">
+						<div class="productoCarrito">
+							<div class="infoProductoCarrito">
+								<span class="cantidad-producto-carrito">0</span>
+								<p class="titulo-producto-carrito">Bebidas</p>
+								<span class="precio-producto-carrito">$0</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="totalCarrito carritoVacio">
+						<h3>Total:</h3>
+						<span class="totalaPagar">$0</span>
+					</div>
+
+					<p class="mostrarCarrito">El carrito está vacío</p>
+
+					<div class="producto">										
+						<button class="botonCarrito" id="pagarProducto">Pagar</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!--PRODUCTOS-->
+		<div id="itemContenedor" >
+		<!--Primer Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/whisky100pipers.png" alt="whisky100pipers"/>					
+				</figure>				
+				<div class="producto">					
+					<h3>Whisky 100 Pipers 1 Lts.</h3>
+					<p class="precio">$9157</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/whiskyaberfeldy_16.png"	alt="whiskyaberfeldy_16"/>
+				</figure>
+				<div class="producto" >
+					<h3>Aberfeldy 16 años 0,70 Lts. + Estuche</h3>
+					<p class="precio">$12450</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/wisky7878.png" alt="wisky7878"/>
+				</figure>
+				<div class="producto">
+					<h3>O'clock Peanut Butter 0,70 Lts.</h3>
+					<p class="precio">$11350</p>
+					<button class="botonCarrito">Añadir al carrito</button> 
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vodkalime.png" alt="vodkalime"/>
+				</figure>
+				<div class="producto">
+					<h3>Vodka Absolut Lime 1 Lts. </h3>
+					<p class="precio">$8990</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="./img/vodkacitron.png" alt="vodkacitron"/>
+				</figure>
+				<div class="producto" >
+					<h3>Vodka Absolut Citron 1 Lts. </h3>
+					<p class="precio">$9250</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>-->
+		<!--Segunda Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/vodka-absolut-blue.png"	alt="vodka-absolut-blue"/>
+				</figure>
+				<div class="producto">
+					<h3>Vodka Absolut Blue 1 Lts.</h3>
+					<p class="precio">$9130</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vodka-absolut-apple.png" alt="vodka-absolut-apple"/>
+				</figure>
+				<div class="producto">
+					<h3>Vodka Absolut Apple 1 Lts.</h3>
+					<p class="precio">$9150</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vodka-absolut-apeach.png" alt="vodka-absolut-apeach"/>
+				</figure>
+				<div class="producto">
+					<h3>Vodka Absolut Apeach 1 Lts.</h3>
+					<p class="precio">$9150</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/ron1_2126_1.png" alt="ron1_2126_1"/>
+				</figure>
+				<div class="producto">
+					<h3>Arehucas Carta Oro 1 Lts.</h3>
+					<p class="precio">$8550</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/ron-facundo-exquisito.png"	alt="ron-facundo-exquisito"/>
+				</figure>
+				<div class="producto">
+					<h3>Bacardi Facundo Exquisito 0,70 Lts.</h3>
+					<p class="precio">$9950</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div> -->
+		<!--Tercer Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/ron-appleton-21.png" alt="ron-appleton-21"/>
+				</figure>
+				<div class="producto">
+					<h3>Appleton 21 años 0,70 Lts. + Estuche</h3>
+					<p class="precio">$16550</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/ron-angostura-1919.png" alt="ron-angostura-1919"/>
+				</figure>
+				<div class="producto">
+					<h3>Angostura 1919 0,70 Lts. + Estuche</h3>
+					<p class="precio">$12250</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/conac2.4080_1.png" alt="conac2.4080_1"/>
+				</figure>
+				<div class="producto">
+					<h3>Abuelo 7 años 0,70 Lts.</h3>
+					<p class="precio">$11900</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/chapagnebollinger13.png" alt="chapagnebollinger13"/>
+				</figure>
+				<div class="producto">
+					<h3>Bollinger B13 0,75 Lts. + Estuche </h3>
+					<p class="precio">$19750</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/champagnelaurent.png" alt="champagnelaurent"/>
+				</figure>
+				<div class="producto">
+					<h3>Laurent Perrier 0,75 Lts. + Estuche</h3>
+					<p class="precio">$14290</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div> -->
+		<!--Cuarta Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/packchapagnerose.png" alt="packchapagnerose"/>
+				</figure>
+				<div class="producto">
+					<h3>Freixenet Ice Rose 0,20 Lts.</h3>
+					<p class="precio">$4580</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vinoalbarino.png" alt="vinoalbarino"/>
+				</figure>
+				<div class="producto">
+					<h3>Albariño Mar De Frades 0,75 Lts.</h3>
+					<p class="precio">$4950</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vinoalto2019.png" alt="vinoalto2019"/>
+				</figure>
+				<div class="producto">
+					<h3>Aalto Cosecha 2019 1,50 Lts.</h2>
+					<p class="precio">$5600</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vinocampoviejo.png" alt="vinocampoviejo"/>
+				</figure>
+				<div class="producto">
+					<h3>Campo Viejo Crianza 0,75 Lts.</h3>
+					<p class="precio">$2900</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vinodrysack.png" alt="vinodrysack"/>
+				</figure>
+				<div class="producto">
+					<h3>Dry Sack Medium 0,75 Lts.</h3>
+					<p class="precio">$4300</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div> -->
+		<!--Quinta Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/vinotiopepe.png" alt="vinotiopepe"/>
+				</figure>
+				<div class="producto">
+					<h3>Tio Pepe Blanc 0,75 Lts.</h3>
+					<p class="precio">$3900</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/vinotrespico.png" alt="vinotrespico"/>
+				</figure>
+				<div class="producto">
+					<h3>Borsao Tres Picos 2019 0,75 Lts.</h3>
+					<p class="precio">$4150</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/cervezacorona.png" alt="cervezacorona"/>
+				</figure>
+				<div class="producto">
+					<h3>Corona Botella 0,36 Lts.</h3>
+					<p class="precio">$750</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/cervezaestrellagalicia.png" alt="cervezaestrellagalicia"/>
+				</figure>
+				<div class="producto">
+					<h3>Estrella Galicia Botella 0,33 Lts.</h3>
+					<p class="precio">$550</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/cervezaheineken.png" alt="cervezaheineken"/>
+				</figure>
+				<div class="producto">
+					<h3>Heineken Botella 0,33 Lts.</h3>
+					<p class="precio">$520</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div> -->
+		<!--Sexta Fila-->
+			<!-- <div class="item">
+				<figure>
+					<img src="./img/bacardimojito.png" alt="bacardimojito"/>
+				</figure>
+				<div class="producto">
+					<h3>Bacardi Mojito Lata 0,25 Lts.</h3>
+					<p class="precio">$590</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/moster.png" alt="moster"/>
+				</figure>
+				<div class="producto">
+					<h3>Monster Green Lata 0,50 Lts.</h3>
+					<p class="precio">$850</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/redbull.png" alt="redbull"/>
+				</figure>
+				<div class="producto">
+					<h3>Red Bull Energy Lata 0,25 Lts.</h3>
+					<p class="precio">$580</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/coca.png" alt="coca"/>
+				</figure>
+				<div class="producto">
+					<h3>Coca Cola Lata 0,33 Lts.</h3>
+					<p class="precio">$450</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img src="./img/cocazero.png" alt="cocazero"/>
+				</figure>
+				<div class="producto">
+					<h3>Coca Cola Zero Lata Dk 0,33 Lts.</h3>
+					<p class="precio">$450</p>
+					<button class="botonCarrito">Añadir al carrito</button>
+				</div>
+			</div> -->
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

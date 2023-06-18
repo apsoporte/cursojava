@@ -70,8 +70,8 @@ function agregarProducto()
                 Productos.push(nuevoProducto);//Agrego los datos al Arreglo                
                 Productos.idProducto = Productos.idProducto + 1;//Incremento el ID de mi ARREGLO                
                 
-                localStorage.setItem('productos', JSON.stringify(Productos));//Agrego al LocalStorage y lo convierto en Json                
-
+                localStorage.setItem('productos', JSON.stringify(Productos));//Agrego al LocalStorage y lo convierto en Json
+                
                 formulario.reset();
                 document.getElementById('producto').focus();
 
